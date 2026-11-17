@@ -5,7 +5,7 @@ description: "A desktop calculator application built with OCaml and GTK3."
 maintainer: ["Paul Ionescu"]
 authors: ["Paul Ionescu"]
 license: "LICENSE"
-tags: ["topics" "calculator" "your" "project"]
+tags: ["calculator"]
 homepage: "https://github.com/Morpeko480/OCAML_Calculator"
 doc: "https://url/to/documentation"
 bug-reports: "https://github.com/Morpeko480/OCAML_Calculator/issues"

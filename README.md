@@ -7,6 +7,7 @@ A desktop calculator built with OCaml and GTK3 (Lablgtk3).
 
 - Basic arithmetic operations
 - Addition, subtraction, multiplication and division
+- Mode switcch for advanced arithmetic operations
 - Graphical user interface
 - Custom CSS styling
 - Decimal number support
