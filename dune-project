@@ -5,11 +5,11 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github Morpeko480/OCAML_Calculator))
 
-(authors "Author Name")
+(authors "Paul Ionescu")
 
-(maintainers "Maintainer Name")
+(maintainers "Paul Ionescu")
 
 (license LICENSE)
 
@@ -17,10 +17,10 @@
 
 (package
  (name calculator)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml dune)
+ (synopsis "A graphical calculator written in OCaml")
+ (description "A desktop calculator application built with OCaml and GTK3.")
+ (depends ocaml dune lablgtk3)
  (tags
-  (topics "to describe" your project)))
+  ("calculator")))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
