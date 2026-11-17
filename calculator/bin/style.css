@@ -1,0 +1,28 @@
+
+window {
+    background-color: #20242c;
+}
+
+entry {
+    background-color: #303642;
+    color: #ffffff;
+    font-size: 28px;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #394454;
+    color: #000000;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #536780;
+}
+
+button:active {
+    background-color: #7295b5;
+}
