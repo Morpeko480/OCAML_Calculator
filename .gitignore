@@ -1,0 +1,15 @@
+# Dune build files
+_build/
+
+# OCaml compiled files
+*.cmi
+*.cmo
+*.cmx
+*.cmxa
+*.cma
+*.o
+*.cmt
+*.cmti
+
+# Editor files
+.vscode/
