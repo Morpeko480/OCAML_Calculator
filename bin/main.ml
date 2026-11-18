@@ -25,6 +25,7 @@ let window =
     ~width:520
     ~height:620
     ~border_width:12
+    ~decorated:true
     ()
 in
 
@@ -188,6 +189,7 @@ let add_row labels =
   let row = 
     GPack.hbox
       ~spacing:5
+      ~homogeneous:true
       ~packing:layout#add
       ()
   in
@@ -199,6 +201,9 @@ let add_row labels =
         ~packing:row#add  
         ()
       in
+      if label = "C" then button#misc#style_context#add_class "clear-button" else
+      if label = "=" then button#misc#style_context#add_class "equals-button" else
+      if List.mem label ["."; "0"; "1"; "2"; "3"; "4"; "5"; "6"; "7"; "8"; "9"] then button#misc#style_context#add_class "number-button";
       if List.mem label ["7"; "8"; "9"; "4"; "5"; "6"; "1"; "2"; "3"; "C"] then buttons := (label, button) :: !buttons 
       else
       if label = "Switch Mode" then button_mode := Some button;

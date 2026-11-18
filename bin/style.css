@@ -1,92 +1,188 @@
+/* =====================================
+   CALCULATOR - IVORY & MUSTARD THEME
+   ===================================== */
 
 /* Main window */
 window {
-    background-color: #101827;
-    color: #EAF2FF;
+    background-color: #F4F0E6;
 }
 
-/* Calculator display */
 entry {
-    background-color: #1B2940;
-    color: #F1F6FF;
+    background-color: #F4F0E6;
+    color: #292A25;
 
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 34px;
     font-weight: bold;
 
     padding: 18px;
-    border: 2px solid #304666;
-    border-radius: 12px;
 
-    caret-color: #60A5FA;
+    border: 2px solid #D4CEBD;
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.12);
 }
-
-/* Default buttons */
+/* Default buttons - warm off-white */
 button {
-    background-color: #263954;
-    background-image: none;
-    color: #EAF2FF;
+    background-image: linear-gradient(
+        to bottom,
+        #FFFDF5,
+        #E8E5D9
+    );
 
-    font-size: 21px;
+    color: #30332A;
+
+    font-size: 20px;
     font-weight: bold;
 
     padding: 14px;
-    border: 1px solid #385477;
-    border-radius: 10px;
+    border: 1px solid #C9C6B9;
+    border-radius: 8px;
 
-    box-shadow: none;
-    transition: background-color 150ms ease;
+    box-shadow: 3px 3px 0 #11150F;
 }
 
-/* Hover effect */
+/* Hover */
 button:hover {
-    background-color: #34547B;
-    border-color: #60A5FA;
+    background-image: linear-gradient(
+        to bottom,
+        #FFFFFF,
+        #F3F0E5
+    );
+
+    border-color: #FFFFFF;
 }
 
-/* Pressed effect */
+/* Pressed */
 button:active {
-    background-color: #19365C;
+    background-image: none;
+    background-color: #D5D2C5;
+    box-shadow: none;
 }
 
-/* Keyboard focus */
-button:focus {
-    outline: 2px solid #60A5FA;
-    outline-offset: 2px;
+/* =====================================
+   NUMBER BUTTONS - DARK MUSTARD
+   ===================================== */
+
+button.number-button {
+    background-image: linear-gradient(
+        to bottom,
+        #D8B84F,
+        #B8952F
+    );
+
+    color: #282417;
+
+    border: 1px solid #F0D77D;
+
+    box-shadow: 3px 3px 0 #725B20;
 }
 
-/* =================================
-   MODE 2 - STRIKING ORANGE
-   ================================= */
+button.number-button:hover {
+    background-image: linear-gradient(
+        to bottom,
+        #E9CC6B,
+        #C8A63D
+    );
+}
+
+button.number-button:active {
+    background-image: none;
+    background-color: #A8872C;
+    box-shadow: none;
+}
+
+/* =====================================
+   CLEAR BUTTON - RED
+   ===================================== */
+
+button.clear-button {
+    background-image: linear-gradient(
+        to bottom,
+        #E66A5E,
+        #B83D35
+    );
+
+    color: #FFFFFF;
+
+    border: 1px solid #F49A8F;
+
+    box-shadow: 3px 3px 0 #70231F;
+}
+
+button.clear-button:hover {
+    background-image: linear-gradient(
+        to bottom,
+        #F18478,
+        #D44B40
+    );
+}
+
+button.clear-button:active {
+    background-image: none;
+    background-color: #A8322B;
+    box-shadow: none;
+}
+
+/* =====================================
+   EQUALS BUTTON - GREEN
+   ===================================== */
+
+button.equals-button {
+    background-image: linear-gradient(
+        to bottom,
+        #65B978,
+        #368B50
+    );
+
+    color: #FFFFFF;
+
+    border: 1px solid #91D49F;
+
+    box-shadow: 3px 3px 0 #205D34;
+}
+
+button.equals-button:hover {
+    background-image: linear-gradient(
+        to bottom,
+        #7BD08E,
+        #48A562
+    );
+}
+
+button.equals-button:active {
+    background-image: none;
+    background-color: #287443;
+    box-shadow: none;
+}
+
+/* =====================================
+   MODE 2 - AMBER
+   ===================================== */
 
 button.mode-inactive {
-    background-color: #263954;
-    color: #FFAD66;
-    border: 1px solid #C66A27;
+    background-image: linear-gradient(
+        to bottom,
+        #FFF0CE,
+        #E5C58C
+    );
+
+    color: #49351A;
+    border: 1px solid #F8DDAA;
+    box-shadow: 3px 3px 0 #8A6631;
 }
 
-button.mode-inactive:hover {
-    background-color: #3B4960;
-}
-
-/* Active Mode 2 */
 button.mode-active,
 button.mode-active:hover,
 button.mode-active:active {
-    background-color: #FF922E;
-    background-image: none;
-    color: #172033;
+    background-image: linear-gradient(
+        to bottom,
+        #FFC66D,
+        #DB902E
+    );
 
-    border: 2px solid #FFC078;
-
-    box-shadow: inset 0 0 0 1px #E77919;
-}
-
-/* =================================
-   GENERAL INTERACTION
-   ================================= */
-
-button:disabled {
-    background-color: #192438;
-    color: #66758C;
-    border-color: #27364B;
+    color: #30200C;
+    border: 1px solid #FFE0A0;
+    box-shadow: 2px 2px 0 #80501A;
 }
