@@ -185,6 +185,31 @@ let handle_button label =
       else ())
 in
 
+let _ = window#event#add [`KEY_PRESS] in
+let _ = window#event#connect#key_press 
+        ~callback:(fun event  -> 
+          let key = GdkEvent.Key.keyval event in
+          if key = GdkKeysyms._0 then  (handle_button "0"; true)
+          else if key = GdkKeysyms._1 then (handle_button "1"; true)
+          else if key = GdkKeysyms._2 then (handle_button "2"; true)
+          else if key = GdkKeysyms._3 then (handle_button "3"; true)
+          else if key = GdkKeysyms._4 then (handle_button "4"; true)
+          else if key = GdkKeysyms._5 then (handle_button "5"; true)
+          else if key = GdkKeysyms._6 then (handle_button "6"; true)
+          else if key = GdkKeysyms._7 then (handle_button "7"; true )
+          else if key = GdkKeysyms._8 then (handle_button "8"; true)
+          else if key = GdkKeysyms._9 then (handle_button "9"; true)
+          else if key = GdkKeysyms._Return then (handle_button "="; true)
+          else if key = GdkKeysyms._plus then (handle_button "+"; true)
+          else if key = GdkKeysyms._minus then (handle_button "-"; true)
+          else if key = GdkKeysyms._slash then (handle_button "/"; true)
+          else if key = GdkKeysyms._asterisk then (handle_button "*"; true)
+          else if key = GdkKeysyms._BackSpace then (delete (); true)
+          else if key = GdkKeysyms._Escape then (handle_button "C"; true)
+          else if key = GdkKeysyms._period then (handle_button "."; true)
+          else false
+        )
+in
 let add_row labels =
   let row = 
     GPack.hbox
