@@ -5,10 +5,13 @@ type operation =
     | DIV
     | SQUARE
     | LN
+    | LOG
     | SIN
     | COS
+    | TAN 
     | SQRT
     | POW
+    | MOD
 
 
 val calculate : float -> float -> operation -> float

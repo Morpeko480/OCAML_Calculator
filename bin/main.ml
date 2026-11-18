@@ -52,12 +52,44 @@ let pending_operation = ref None in
 let start_new_number = ref true in
 let second_mode = ref false in
 let button_mode = ref None in
+let buttons = ref [] in
+
+
+let update_buttons () =
+  List.iter
+    (fun (original_label, button) ->
+      let new_label = 
+        if !second_mode then 
+          match original_label with
+          | "7" -> "xʸ"
+          | "8" -> "x²"
+          | "9" -> "√"
+          | "4" -> "sin"
+          | "5" -> "cos"
+          | "6" -> "tan"
+          | "1" -> "%"
+          | "2" -> "ln"
+          | "3" -> "log"
+          | "C" -> "DEL"
+          | _ -> original_label
+        else
+          original_label
+        in
+        button#set_label new_label
+    )
+    !buttons
+in  
 
 let toggle_second_mode () = 
   second_mode := not (!second_mode);
+  update_buttons ();
   match !button_mode with
   | None -> ()
-  | Some button -> if !second_mode then button#misc#style_context#add_class "mode-active" else button#misc#style_context#remove_class "mode-active"
+  | Some button -> 
+    if !second_mode 
+      then 
+        button#misc#style_context#add_class "mode-active"
+  else button#misc#style_context#remove_class "mode-active"
 in
 
 let update_display () =
@@ -131,7 +163,7 @@ in
 let handle_button label =
   match label with
   | "C" -> if not (!second_mode) then clear () else delete ()
-  | "Mode 2" -> toggle_second_mode ()
+  | "Switch Mode" -> toggle_second_mode ()
   | "=" -> calculate_result ()
   | "+" -> choose_operation Calculator.ADD
   | "-" -> choose_operation Calculator.SUB
@@ -146,6 +178,9 @@ let handle_button label =
       else if x = "4" then choose_operation Calculator.LN
       else if x = "5" then choose_operation Calculator.SIN
       else if x = "6" then choose_operation Calculator.COS 
+      else if x = "1" then choose_operation Calculator.MOD
+      else if x = "2" then choose_operation Calculator.LN
+      else if x = "3" then choose_operation Calculator.LOG
       else ())
 in
 
@@ -164,8 +199,9 @@ let add_row labels =
         ~packing:row#add  
         ()
       in
-      
-      if label = "Mode 2" then button_mode := Some button;
+      if List.mem label ["7"; "8"; "9"; "4"; "5"; "6"; "1"; "2"; "3"; "C"] then buttons := (label, button) :: !buttons 
+      else
+      if label = "Switch Mode" then button_mode := Some button;
       let _ = 
         button#connect#clicked
         ~callback:(fun () -> handle_button label)
@@ -178,7 +214,7 @@ add_row["7"; "8"; "9"; "/"];
 add_row["4"; "5"; "6"; "*"];
 add_row["1"; "2"; "3"; "-"];
 add_row["C"; "0"; "."; "+"];
-add_row["="; "Mode 2"];
+add_row["="; "Switch Mode"];
 
 window#show ();
 in 
